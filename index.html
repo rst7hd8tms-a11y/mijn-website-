@@ -116,6 +116,20 @@
             <input type="date" id="datum">
 
             <input type="time" id="tijd">
+            <button onclick="afspraakWhatsApp()">Afspraak maken via WhatsApp</button>
+
+<script>
+function afspraakWhatsApp() {
+    let naam = document.getElementById("naam").value;
+    let dienst = document.getElementById("dienst").value;
+    let datum = document.getElementById("datum").value;
+    let tijd = document.getElementById("tijd").value;
+
+    let bericht = ⁠ Hallo, ik wil graag een afspraak maken.%0A%0ANaam: ${naam}%0ADienst: ${dienst}%0ADatum: ${datum}%0ATijd: ${tijd} ⁠;
+
+    window.open("https://wa.me/5977455406?text=" + bericht, "_blank");
+}
+</script>
 
             <br>
 
