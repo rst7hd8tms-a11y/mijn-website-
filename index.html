@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menig Juldrean - Barber</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        .subtitle {
+            color: #bbb;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .service {
+            background: #1e1e1e;
+            margin: 12px 0;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+
+        .booking {
+            margin-top: 40px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 14px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Menig Juldrean</h1>
+
+        <p class="subtitle">
+            Strakke cuts. Goede service.
+        </p>
+
+        <h2>Onze diensten</h2>
+
+        <div class="service">
+            ✂️ Haircut -
+            <span class="price">SRD 350</span>
+        </div>
+
+        <div class="service">
+            🧔 Baard trim -
+            <span class="price">SRD 300</span>
+        </div>
+
+        <div class="service">
+            💈 Haircut + Beard -
+            <span class="price">SRD 450</span>
+        </div>
+
+        <div class="booking">
+
+            <h2>Afspraak maken</h2>
+
+            <input type="text" id="naam" placeholder="Je naam">
+
+            <select id="dienst">
+                <option>Haircut - SRD 350</option>
+                <option>Baard trim - SRD 300</option>
+                <option>Haircut + Beard - SRD 450</option>
+            </select>
+
+            <input type="date" id="datum">
+
+            <input type="time" id="tijd">
+
+            <br>
+
+            <a href="#" class="whatsapp" onclick="maakAfspraak()">
+                📅 Afspraak maken
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+        function maakAfspraak() {
+            let naam = document.getElementById("naam").value;
+            let dienst = document.getElementById("dienst").value;
+            let datum = document.getElementById("datum").value;
+            let tijd = document.getElementById("tijd").value;
+
+            let bericht =
+                "Hallo Menig, ik wil graag een afspraak maken.%0A%0A" +
+                "Naam: " + naam +
+                "%0ADienst: " + dienst +
+                "%0ADatum: " + datum +
+                "%0ATijd: " + tijd;
+
+            window.open(
+                "https://wa.me/5977455406?text=" + bericht,
+                "_blank"
+            );
+        }
+    </script>
+
+</body>
+</html>
